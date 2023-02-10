@@ -1,7 +1,7 @@
 package com.pluralsight.oracle.oca;
 
-import com.pluralsight.oracle.oca.customer.Customer;
-import com.pluralsight.oracle.oca.customer.VIPCustomer;
+import com.pluralsight.oracle.oca.shop.Customer;
+import com.pluralsight.oracle.oca.shop.VIPCustomer;
 
 import java.util.List;
 

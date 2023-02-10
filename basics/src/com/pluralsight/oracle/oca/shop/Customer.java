@@ -1,4 +1,4 @@
-package com.pluralsight.oracle.oca.customer;
+package com.pluralsight.oracle.oca.shop;
 
 import java.util.List;
 
