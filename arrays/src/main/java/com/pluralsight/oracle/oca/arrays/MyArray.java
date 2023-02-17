@@ -11,6 +11,10 @@ public class MyArray {
 
         int [] newnums = new int [] {2,4,6,8};
 
+        int [] empty = new int [0];
+        int [] empty2 = {};
+
+        int [] lotsOfNumbers = new int [10]; // out of memory
 
     }
 }
