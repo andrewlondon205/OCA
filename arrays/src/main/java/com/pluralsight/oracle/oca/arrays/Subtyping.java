@@ -11,8 +11,10 @@ public class Subtyping {
         System.out.println(str.toUpperCase());
 
         Object obj = new Object();
-        String str2 = (String) obj;
+        //String str2 = (String) obj;
 
+        Object array = new Object[] {"one","two","three"};
+        String [] strings = (String[]) array;
 
     }
 }
