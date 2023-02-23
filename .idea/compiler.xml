@@ -6,11 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="encapsulation" />
         <module name="arrays" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="arrays" target="17" />
+      <module name="encapsulation" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>
