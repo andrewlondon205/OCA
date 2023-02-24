@@ -17,5 +17,6 @@ public class Main {
         ro123.printLabel(options);
         System.out.println(options.isShowAltitudeTrendArrow());
         System.out.println(options.isShowSpeed());
+
     }
 }
