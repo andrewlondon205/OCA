@@ -11,6 +11,6 @@ public class PlayWithComparables {
         NewCapital london = new NewCapital();
         london.setName("London");
 
-        Comparable<NewCapital> londom
+        Comparable<NewCapital> londom;
     }
 }

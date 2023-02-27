@@ -10,7 +10,7 @@ public class Country {
     public List<String> getTownName() {
         List<String> names = new ArrayList<>();
         for (Town town : towns)
-            names.add(town.name);
+            names.add(town.getName());
         return names;
     }
 }
