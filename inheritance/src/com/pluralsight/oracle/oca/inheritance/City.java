@@ -1,10 +1,10 @@
 package com.pluralsight.oracle.oca.inheritance;
 
 public class City {
-    private final String name;
+    private  String name;
     private Integer population;
 
-    public City (String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
