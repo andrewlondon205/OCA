@@ -4,32 +4,24 @@ public class DriverCode {
 
     public static void main(String[] args) {
 
-        City city = new City();
-        city.setName("Paris");
-        city.setPopulation(10);
+        City newYork = new City();
+        newYork.setName("New York");
+        newYork.setPopulation(10);
 
-        System.out.println("Name = " + city.getName());
-        System.out.println("Population = " + city.getPopulation());
+        CapitalCity paris = new CapitalCity();
+        paris.setName("Paris");
+        paris.setPopulation(20);
 
-      /*      process(city);
+        System.out.println("Paris = " + paris.toString());
+        System.out.println("New York = " + newYork.toString());
 
-            System.out.println("Name = " + city.getName());
-            System.out.println("Population = " + city.getPopulation());*/
+        process(paris);
 
-        int population = city.getPopulation();
-        System.out.println("population = " + population);
-        process(population);
-
-        System.out.println("population = " + population);
 
     }
 
     static void process(City city) {
-        city.setName("New York");
-        city.setPopulation(15);
+        System.out.println("City = " + city.toString());
     }
 
-    static void process(int population) {
-        population = 100;
-    }
 }
