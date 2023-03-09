@@ -1,28 +1,36 @@
 Chapter 1
 
-1.ABE \
-2.D \
-3.BDE\
-4.AB\
-5.CD\
-6.E\
-7.ACD x
-8.B\
-9.ACDE\
-10.E\
-11.CD\
-12.G\
-13.AD\
-14.B\
-15.AE\
-16.BCD\
-17.AE\
-18.CEx
-19.ADx
-20.BDx
-21.Ax
-22.ABCEx
-23.Cx
+1.ABE x
+2.D x
+3.BDE x
+4.AB x
+5.CD x
+6.E x
+7.ABC x
+8.B x
+9.ACDE x
+10.E x
+11.CD x
+12.G x
+13.AD x
+14.D x
+15.AE x
+16.BCD x
+17.AE x
+18.CDE x
+19.AD/BD -
+20.CD/BE -
+21.A x
+22.BE -
+23.CD x
 
 
-Score:16/23
+Score: 20/23
+
+Chapter 2
+
+
+
+
+
+Score:
