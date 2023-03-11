@@ -13,24 +13,45 @@ Chapter 1
 11.CD x
 12.G x
 13.AD x
-14.D x
+14.B -
 15.AE x
-16.BCD x
+16.ABCD -
 17.AE x
 18.CDE x
-19.AD/BD -
-20.CD/BE -
+19.BD x
+20.BE x
 21.A x
-22.BE -
+22.BE x
 23.CD x
 
-
-Score: 20/23
+Score1: 16/23
+Score2: 20/23
+Score3: 21/23
 
 Chapter 2
 
+1.AD x
+2.AEF/ABD -
+3.F x
+4.BCDF x
+5.C x
+6.F x
+7.D x
+8.B x
+9.B/F -
+10.D x
+11.A x
+12.D x
+13.A x
+14.C x
+15.E x
+16.D x
+17.D x
+18.B x
+19.D x
+20.B x
 
 
-
-
-Score:
+Score1: 11/20
+Score2: 11/20
+Score3: 18/20

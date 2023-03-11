@@ -48,7 +48,5 @@ public class StringMethods {
         str = "\t\b   \"Hi there!\"   \\\r\n\f";
         str.length(); //22
 
-
-
     }
 }
