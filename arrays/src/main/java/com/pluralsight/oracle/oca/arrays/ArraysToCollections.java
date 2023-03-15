@@ -9,8 +9,8 @@ public class ArraysToCollections {
     public static void main(String[] args) {
 
         String [] array = {"one","two","three"};
+        String [] brray = {"one","two","three"};
         List<String> list = Arrays.asList(array);
-
         List<String> list2 = Arrays.asList("hello","this","is","my","world");
 
         list.set(0,"four");
@@ -25,5 +25,9 @@ public class ArraysToCollections {
         list3.add("six");
         System.out.println(list3);
         System.out.println(Arrays.toString(array));
+        System.out.println(Arrays.equals(array,brray));
+
+
+
     }
 }

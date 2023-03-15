@@ -58,7 +58,7 @@ Score3: 18/20
 
 Chapter 3
 
-1.BD -
+1.G x
 2.AC -
 3.BCE x
 4.B x
@@ -67,29 +67,30 @@ Chapter 3
 7.BDE x
 8.ADE x
 9.C x
-10.F x
-11.E x
+10.A -
+11.F -
 12.A x
 13.B -
 14.AC x
-15.CE -
-16.AC -
+15.CDE -
+16.C x
 17.F x
 18.ACDE x
-19.ABC -
+19.BC x
 20.D x
 21.C x
 22.D x
 23.A x
 24.C x
-25.E -
-26.ABD x
+25.D x
+26.ABC -
 27.B x
 28.DF x
-29.B -
+29.D x
 30.F x
 31.B x
 32.G -
 33.B x
 
 Score1: 23/33
+Score2: 25/33

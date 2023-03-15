@@ -55,6 +55,5 @@ public class AddingRemovingElements {
 
         boolean isEmpty = aList_1.isEmpty();
         System.out.println("16. aList_1.isEmpty() = " + isEmpty);
-
     }
 }
