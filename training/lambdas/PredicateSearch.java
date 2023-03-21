@@ -28,5 +28,6 @@ public class PredicateSearch {
                 System.out.print(animal + " ");
         }
         System.out.println();
+
     }
 }

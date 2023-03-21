@@ -1,6 +1,6 @@
 package lambdas;
 
-public class Animal {
+class Animal {
     private String species;
     private boolean canHop;
     private boolean canSwim;

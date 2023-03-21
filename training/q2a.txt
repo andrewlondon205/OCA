@@ -99,34 +99,40 @@ Score3: 30/33
 
 Chapter 4
 
-1.BC
-2.AD
-3.ACDG
-4.ABG
-5.DFG
-6.CD
-7.DF
-8.BCE
-9.BC
-10.
-11.
-12.
-13.
-14.
-15.
-16.
-17.
-18.
-19.
-20.
-21.
-22.
-23.
-24.
-25.
-26.
-27.
-28.
-29.
+1.BC x
+2.AD x
+3.ACDG -
+4.ABG x
+5.DG x
+6.AD -
+7.BCDF/CDF x
+8.BCE x
+9.BCE -
+10.B x
+11.BE x
+12.D x
+13.E x
+14.B x
+15.D -
+16.B x
+17.BDE x
+18.CD -
+19.AG x
+20.E x
+21.C x
+22.G -
+23.F -
+24.BCF -
+25.AE x
+26.A x
+27.C x
+28.ADF x
+29.AF x
 
-Score1: /29
+Score1: 16/29
+Score2: 21/29
+Score3:
+
+391
+Chapter 5:
+
