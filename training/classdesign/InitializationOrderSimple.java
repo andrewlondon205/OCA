@@ -13,4 +13,5 @@ public class InitializationOrderSimple {
 
         InitializationOrderSimple io = new InitializationOrderSimple();
     }
+
 }
