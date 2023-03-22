@@ -1,7 +1,6 @@
 package pond.duck;
 
 import alpha.Animal;
-
 public class BadDuckling {
 
     public void makeNoise() {
