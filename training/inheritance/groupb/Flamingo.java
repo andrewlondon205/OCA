@@ -12,8 +12,8 @@ class Walrus extends Being {
     }
 }
 
-public class Flamingo extends Being{
-    public String getName() {
+public abstract class Flamingo extends Being{
+ /*   public String getName() {
         return "Flamingo";
-    }
+    }*/
 }
