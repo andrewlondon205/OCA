@@ -9,7 +9,6 @@ interface HasWhiskers {
 }
 
 abstract class HarborSeal implements HasTail, HasWhiskers {
-
 }
 /*
 class LeopardSeal implements HasWhiskers, HasTail {
