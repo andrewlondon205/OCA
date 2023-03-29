@@ -135,28 +135,30 @@ Score3: 26/29
 
 Chapter 5
 
-1.
-2.
-3.
-4.
-5.
-6.
-7.
-8.
-9.
-10.
-11.
-12.
-13.
-14.
-15.
-16.
-17.
-18.
-19.
-20.
+1.B x
+2.E x
+3.ABDE x
+4.CE x
+5.ADF -
+6.D x
+7.BC x
+8.F x
+9.A x
+10.BCEF x
+11.ADE x
+12.B x
+13.A x
+14.C x
+15.B x
+16.E x
+17.B x
+18.E x
+19.ACF x
+20.Ax
 
 Score1: 11/20
+Score2: 15/20
+Score3: 19/20
 
 Chapter 6
 
