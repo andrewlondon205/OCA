@@ -185,4 +185,5 @@ Chapter 6
 
 Score1: 9/20
 Score2: 12/20
+Score3:
 
