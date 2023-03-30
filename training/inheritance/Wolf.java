@@ -5,6 +5,7 @@ class Canine {
     public double getAverageWeight () {
         return 50;
     }
+
 }
 
 public class Wolf extends Canine{

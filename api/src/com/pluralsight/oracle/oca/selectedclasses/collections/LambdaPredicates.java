@@ -37,7 +37,5 @@ public class LambdaPredicates {
         Stream<String> filtered = aList_3.stream().filter(color -> color.endsWith("e"));
         out.println(Arrays.asList(filtered.toArray()));
 
-
-
     }
 }
