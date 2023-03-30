@@ -101,28 +101,28 @@ Chapter 4
 
 1.BC x
 2.AD x
-3.ACDG -
+3.ACD x
 4.ABG x
 5.DG x
-6.AD -
-7.BCDF/CDF x
+6.D x
+7.BCDF x
 8.BCE x
-9.BCE -
+9.CE x
 10.B x
 11.BE x
 12.D x
-13.E x
+13.D/E -
 14.B x
-15.D -
+15.E x
 16.B x
 17.BDE x
-18.CD -
+18.BC/CG -
 19.AG x
 20.E x
 21.C x
-22.G -
-23.F -
-24.BCF -
+22.E x
+23.B/A -
+24.BCE x
 25.AE x
 26.A x
 27.C x
@@ -130,8 +130,58 @@ Chapter 4
 29.AF x
 
 Score1: 16/29
-Score2: 21/29
-Score3:
+Score2: 20/29
+Score3: 26/29
 
-391
-Chapter 5:
+Chapter 5
+
+1.B x
+2.E x
+3.ABDE x
+4.CE x
+5.ADF -
+6.D x
+7.BC x
+8.F x
+9.A x
+10.BCEF x
+11.ADE x
+12.B x
+13.A x
+14.C x
+15.B x
+16.E x
+17.B x
+18.E x
+19.ACF x
+20.Ax
+
+Score1: 11/20
+Score2: 15/20
+Score3: 19/20
+
+Chapter 6
+
+1.
+2.
+3.
+4.
+5.
+6.
+7.
+8.
+9.
+10.
+11.
+12.
+13.
+14.
+15.
+16.
+17.
+18.
+19.
+20.
+
+Score1: /20
+
