@@ -172,18 +172,19 @@ Chapter 6
 8.E x
 9.B x
 10.E x
-11.E -
-12.ABDEF -
-13.ACE -
-14.AD -
+11.A x
+12.ABDG x
+13.ABCE x
+14.ABD -
 15.ABDE x
 16.B x
-17.AC -
+17.ACDE x
 18.ABCE x
-19.BC -
-20.ACE -
+19.CE x
+20.AE x
 
 Score1: 9/20
 Score2: 12/20
-Score3:
+Score3: 15/20
+Score4: 18/20
 
