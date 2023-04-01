@@ -188,3 +188,28 @@ Score2: 12/20
 Score3: 15/20
 Score4: 18/20
 
+Assessment Test:
+
+1.E x
+2.C x
+3.CDE x
+4.C x
+5.D x
+6.B x
+7.B x
+8.A x
+9.BC x
+10.CDEF -
+11.B x
+12.B x
+13.C x
+14.ABF -
+15.ACE x
+16.DFG x
+17.ACF x
+18.BD x
+19.C x
+20.AC x
+
+Score 1: 14/20
+Score 2: 18/20
