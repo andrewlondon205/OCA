@@ -7,7 +7,6 @@ public class ArrayMethods {
     public static void main(String[] args) {
 
         int [] numbers1 = {16,23,30};
-
         int [] numbers2 = Arrays.copyOf(numbers1,4);
         System.out.println(Arrays.toString(numbers2));
 
