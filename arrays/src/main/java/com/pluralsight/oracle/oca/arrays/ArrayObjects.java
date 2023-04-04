@@ -5,12 +5,11 @@ import java.util.Arrays;
 public class ArrayObjects {
 
     public static void main(String[] args) {
+        int[] numbers = {16, 23, 30, 41};
+        int[] alpha = {19, 11, 1999};
+        int[] betha = {19, 11, 1999};
 
-        int [] numbers = {16,23,30,41};
-        int [] alpha = {19,11,1999};
-        int [] betha = {19,11,1999};
-
-        String [] names = {"Susan","John","Betty","Mark"};
+        String[] names = {"Susan", "John", "Betty", "Mark"};
 
         String c1 = numbers.getClass().getName();
         String c2 = names.getClass().getName();
@@ -22,7 +21,7 @@ public class ArrayObjects {
 
         // comparing objects
         boolean result = alpha.equals(betha);
-        boolean flag = Arrays.equals(alpha,betha);
+        boolean flag = Arrays.equals(alpha, betha);
 
         System.out.println("Are they equal? " + result);
         System.out.println("Are they equal? " + flag);
@@ -32,5 +31,6 @@ public class ArrayObjects {
 
         System.out.println(Arrays.hashCode(alpha));
         System.out.println(Arrays.hashCode(betha));
+
     }
 }

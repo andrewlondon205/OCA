@@ -1,6 +1,8 @@
 package com.pluralsight.oracle.oca.arrays;
 
+
 import java.util.Arrays;
+import java.util.List;
 
 public class ArrayMethods {
 
@@ -24,7 +26,6 @@ public class ArrayMethods {
 
         int index = Arrays.binarySearch(numbers4,23);
         System.out.println("Found 23 at index: " + index);
-
 
     }
 }
