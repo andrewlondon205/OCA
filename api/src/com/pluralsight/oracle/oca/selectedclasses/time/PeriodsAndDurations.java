@@ -6,7 +6,7 @@ import static java.lang.System.out;
 
 public class PeriodsAndDurations {
 
-    public static void main(String[] args) {
+     public static void main(String[] args) {
 
         out.println("\n** Periods and Durations ** \n");
 
@@ -36,5 +36,12 @@ public class PeriodsAndDurations {
         out.println("6. " + period.getYears() + " years, " + period.getMonths() + " months and " + period.getDays() + " days");
 
         period = Period.ofMonths(2);
+
+        String [] arguments = {"1","2"};
+
+        
+
     }
+
 }
+
