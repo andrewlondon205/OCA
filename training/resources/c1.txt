@@ -171,5 +171,34 @@ jshell> public class ImportExample {
    ...> } }
 |  modified class ImportExample
 
+jshell> import java.util.*; // imports java.util.Random among other things
+
+jshell> public class ImportExample {
+   ...> public static void main(String[] args) { Random r = new Random(); System.out.println(r.nextInt(10));
 jshell>
+
+jshell> public class ImportExample {
+   ...> public static void main(String[] args) { Random r = new Random(); System.out.println(r.nextInt(10));
+   ...> } }
+|  modified class ImportExample
+
+jshell> import java.lang.System
+
+jshell> import java.lang.*
+
+jshell> import java.util.Random
+
+jshell> import java.util.*;
+
+jshell> public class ImportExample {
+   ...>     public static void main (String ... args) {
+   ...>         Random r = new Random();
+   ...>         System.out.println(r.nextInt(10));
+   ...>     }
+   ...> }
+|  replaced class ImportExample
+
+jshell> // imports are redundant
+
+
 
