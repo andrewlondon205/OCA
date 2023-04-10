@@ -3,6 +3,8 @@ package com.pluralsight.oracle.oca.selectedclasses.strings;
 import static java.lang.System.out;
 public class ImmutableString {
 
+    int x,y;
+
     public static void main(String[] args) {
 
         out.println("\n** Immutable Strings ** \n");
@@ -17,8 +19,7 @@ public class ImmutableString {
         String str4 = str.substring(5);
         String str5 = str.substring(5);
         out.println(str4 == str5); //false
-
-
+        
 
 
     }
