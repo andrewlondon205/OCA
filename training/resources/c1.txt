@@ -1,0 +1,123 @@
+Last login: Mon Apr 10 18:37:54 on ttys000
+(base) ramaialejandria@Ramais-iMac ~ % jshell
+|  Welcome to JShell -- Version 17.0.2
+|  For an introduction type: /help intro
+
+jshell> public class Animal {}
+|  created class Animal
+
+jshell> public class Animal {
+   ...>     String name;}
+|  replaced class Animal
+
+jshell> public class Animal {
+   ...>     String name;
+   ...>     public String getName() {
+   ...>         return name;
+   ...>     }
+   ...> }
+|  replaced class Animal
+
+jshell> public class Animal {
+   ...>     String name;
+   ...>     public String getName() {
+   ...>         return name;
+   ...>     }
+   ...>
+   ...>     public void setName(String newName) {
+   ...>         name = newName;
+   ...>     }
+   ...> }
+|  replaced class Animal
+
+jshell> public int numberVisitors(int month);
+|  Error:
+|  missing method body, or declare abstract
+|  public int numberVisitors(int month);
+|  ^-----------------------------------^
+
+jshell> public int numberVisitors(int month) {}
+|  Error:
+|  missing return statement
+|  public int numberVisitors(int month) {}
+|                                       ^^
+
+jshell> public int numberVisitors(int month) {return 1; }
+|  created method numberVisitors(int)
+
+jshell> class Creature {
+   ...>     // We are only allowed to have one public class per java file, and it must much the name of the file.
+   ...>     String identity;
+   ...> }
+|  created class Creature
+
+jshell> Creature
+|  Error:
+|  cannot find symbol
+|    symbol:   variable Creature
+|  Creature
+|  ^------^
+
+jshell> new Creature();
+$7 ==> Creature@312b1dae
+
+jshell> public class Zoo {
+   ...>     public static void main (String [] args) {
+   ...>         System.out.println("Hello");
+   ...>     }
+   ...> }
+|  created class Zoo
+
+jshell> new Zoo();
+$9 ==> Zoo@506e1b77
+
+jshell> public void Human {
+   ...>     public Human () {
+   ...>         System.out.println("I am a human");
+   ...>     }
+   ...>     public static void main (String ... args) {
+   ...>     }
+   ...> }
+|  Error:
+|  '(' expected
+|  public void Human {
+|  ^----------------^
+
+jshell> public class Human {
+   ...>     public Human () {
+   ...>         System.out.println("I am a human");
+   ...>     }
+   ...>     public static void main (String ... args) {
+   ...>     }
+   ...> }
+|  created class Human
+
+jshell> new Human()
+I am a human
+$11 ==> Human@1ddc4ec2
+
+jshell> public class Zoo {
+   ...> public static void main(String[] args) {
+   ...> System.out.println(args[0]); System.out.println(args[1]);
+   ...> }}
+|  modified class Zoo
+
+jshell> new Zoo().main("arguments");
+|  Error:
+|  incompatible types: java.lang.String cannot be converted to java.lang.String[]
+|  new Zoo().main("arguments");
+|                 ^---------^
+
+jshell> new Zoo().main(new String[]{"arguments"});
+arguments
+|  Exception java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
+|        at Zoo.main (#12:3)
+|        at (#13:1)
+
+jshell> // to compile and run:
+
+jshell> // javac Zoo.java
+
+jshell> // java Zoo Bronx Zoo
+
+jshell>
