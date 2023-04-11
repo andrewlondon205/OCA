@@ -3,15 +3,217 @@ Exam 1:
 ATTEMPT1: 40/70 -> 57% FAILED
 ATTEMPT2: 60/70 -> 85% PASSED
 
-Exam 2:
+Notes:
 
-ATTEMPT1: 48/70 -> 68% PASSED
-ATTEMPT2:
+1.- When a child class extends a parent class, it is forced make a call on at least one of the parents
+    constructors if there is no-args constructor in the parent class. Else, the compiler will complain.
+    Example:
 
-Exam 3:
+    import java.util.List;
+    class Band {
+        private int debutYear;
+        private List<String> members;
+        public Band (int debutYear) {
+            this.debutYear = debutYear;
+        }
+    }
+    public class RockBand extends Band {
+        public RockBand(int amount) {
+            //DOES NOT COMPILE
+        }
+        public RockBand() {
+            super(10);
+        }
+    }
 
-Exam 4:
+    Note: The call to the parents constructor must be present in all child constructors.
 
-Exam 5:
+2.- It is not possible to perform arithmetic operations on array elements if the array type is not
+    that of a primitive, and the array is empty. In such scenario, a NullPointerException will be
+    thrown because the array will initially have null elements when initialized.
 
-Exam 6:
+    Example:
+
+    public class Test {
+         public static void main(String[] args) {
+             Double [] arr = new Double[2]; //THROWS NULLPOINTER EXCEPTION
+             System.out.println(arr[0] + arr[1]);
+         }
+    }
+
+    Note: Had the object type of the array been "double", then output would have been 0.0.
+
+3.- We need to be careful when invoking the "equals" method on objects. Not all classes override "equals"
+    method in their implementation.Therefore, when a class doesn't override the above mentioned method,
+    then the "==" operator will be used when the method is invoked on the object.
+
+    Example:
+
+    A particular case is that of the String and StringBuilder classes.
+
+    String s1 = "Java";
+    StringBuilder sb = new StringBuilder("java");
+
+    s1.equals(sb) -> Outputs false because Java realizes that sb is a different object.
+
+    sb.equals(s1) -> Outputs false because Java will look for the actual object references in memory.
+                     s1 and sb are two different objects, therefore, it prints false.
+
+4.- It is important to look at Ternary Operators carefully. If an expression has multiple ternary operators,
+    then the number of ? and : should match.
+
+    Example:
+
+    package com.udayan.oca;
+
+    import java.time.LocalTime;
+
+    public class Test {
+         public static void main(String[] args) {
+             LocalTime time = LocalTime.of(16, 40);
+             String amPm = time.getHour() >= 12 ? (time.getHour() == 12) ? "PM" : "AM";
+             System.out.println(amPm);
+         }
+    }
+
+    Note: Code does not compile because the the expression has 2 "?" and 1 ":";
+
+5.- When we try to remove ArrayList elements. We have to bear in mind that "remove" method is overloaded
+    with the following methods:
+
+    boolean remove(int index); - Removes the first occurrence of the element placed at x position.
+    boolean remove(Object o); - Removes the first occurrence of the actual object.
+
+    Example:
+
+    List<Integer> list = new ArrayList<Integer>();
+             list.add(new Integer(2));
+             list.add(new Integer(1));
+             list.add(new Integer(0));
+
+             list.remove(list.indexOf(0));
+
+             System.out.println(list);
+
+    - Removes the last element.
+
+
+6.- Checked Exceptions are peculiar in that they are required to be handled or declared. Otherwise, java
+    will give a compiler error. We have to be careful when handling exceptions of classes and subclasses.
+
+    Example:
+
+    package com.udayan.oca;
+
+    import java.io.FileNotFoundException;
+    import java.io.IOException;
+
+    abstract class Super {
+         public abstract void m1() throws IOException;
+    }
+
+    class Sub extends Super {
+         @Override
+         public void m1() throws IOException {
+             throw new FileNotFoundException();
+         }
+    }
+
+    public class Test {
+         public static void main(String[] args) {
+             Super s = new Sub();
+             try {
+                 s.m1();
+             } catch (FileNotFoundException e) {
+                 System.out.print("M");
+             } finally {
+                 System.out.print("N");
+             }
+         }
+    }
+
+    Note: The following code gives compiler error because even though an instance of FileNotFoundException
+          is thrown by method m1() at runtime, but method m1() declares to throw IOException.
+
+          Reference variable s is of Super type and hence for compiler, call to s.m1(); is to method m1()
+          of Super, which throws IOException. And as IOException is checked exception hence calling code should
+          handle it.
+
+          As calling code doesn't handle IOException or its super type, so s.m1(); gives compilation error.
+
+7.- When removing elements from an ArrayList using the "remove" method. Bear in mind that the method is
+    overloaded: boolean remove(int index), boolean remove(Object o).
+
+    If we pass in 'O' to the "contains" method, then it will be autoboxed to a Character object. Then,
+    in order to remove the object from the list, Java will use the "boolean remove(int index)" method
+    meaning that it will look for the 65th position in the List because characters are automatically
+    converted to int numbers.
+
+    Since there is no such position in the List, Java will throw a RuntimeException "ArrayOutOfBounds"
+
+    package com.udayan.oca;
+
+    import java.util.ArrayList;
+    import java.util.List;
+
+    public class Test {
+         public static void main(String[] args) {
+             List<Character> list = new ArrayList<>();
+             list.add(0, 'V');
+             list.add('T');
+             list.add(1, 'E');
+             list.add(3, 'O');
+
+             if(list.contains('O')) {
+                 list.remove('O');
+             }
+
+             for(char ch : list) {
+                 System.out.print(ch);
+             }
+         }
+    }
+
+
+8.- If an object is passed through a method parameter, we are not allowed to redefine a new object
+    using the same name:
+
+    Example:
+
+    package com.udayan.oca;
+
+    public class Test {
+         public static void main(String[] args) {
+             short [] args = new short[]{50, 50};
+             args[0] = 5;
+             args[1] = 10;
+             System.out.println("[" + args[0] + ", " + args[1] + "]");
+         }
+    }
+
+9.- Watch out for recursive calls. A recursive call is when a method calls itself. If there is no termination
+    condition, Java will throw a StackOverFlow Error which we are not supposed to handle or declare at all.
+
+    package com.udayan.oca;
+
+    public class Test {
+         public static void main(String[] args) {
+             try {
+                 main(args);
+             } catch (Exception ex) {
+                 System.out.println("CATCH-");
+             }
+                 System.out.println("OUT");
+         }
+    }
+
+    Note: main(args) method is invoked recursively without specifying any exit condition, so this code ultimately throws
+    java.lang.StackOverflowError. StackOverflowError is a subclass of Error type and not Exception type, hence it is not
+    handled. Stack trace is printed to the console and program ends abruptly.
+
+    Java doesn't allow to catch specific checked exceptions if these are not thrown by the statements inside try block.
+
+    catch(java.io.FileNotFoundException ex) {} will cause compilation error in this case as main(args); will never throw
+    FileNotFoundException. But Java allows to catch Exception type, hence catch (Exception ex) {} doesn't cause any compilation
+    error.
+
