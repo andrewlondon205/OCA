@@ -1,0 +1,21 @@
+Access Modifiers for class Definitions
+
+- Defining two public classes within the same java file is forbidden.
+- One of the class names must match the name of the java file
+- A class within a java file is not required to be public.
+- The only access modifiers allowed for class definitions are: public and package-private (default)
+
+
+Execution Process
+
+A java program begins execution with its main() method. A main() method is the gateway between the startup of a Java
+process, which is managed by the Java Virtual Machine (JVM), and the beginning of the programmer's code. The JVM calls
+on the underlying system to allocate memory and CPU time, access files, and so on.
+
+Compiling and Executing a Java File
+
+- To compile Java code, the file must have the extension .java. The name of the file must match the name of the class.
+- The result is a file of bytecode by the same name, but with a .class filename extension.
+- Bytecode consists of instructions that the JVM knows how to execute. Notice that we must omit the .class extension to run Zoo.
+  java because the period has a reserved meaning in the JVM.
+
