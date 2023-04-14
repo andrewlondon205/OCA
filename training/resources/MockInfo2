@@ -1,0 +1,154 @@
+Exam 2:
+
+ATTEMPT1: 48/70 -> 68% FAILED
+ATTEMPT2: 65/70 -> 92% PASSED
+
+1.-  Static Method "ofYears" from the class Period can accept both positive and negative values. The minimum supported
+     LocalDate is :{-999999999-01-01} and maximum supported is LocalDate is: {+999999999-12-31}.
+
+     Example:
+
+     package com.udayan.oca;
+
+     import java.time.LocalDate;
+     import java.time.Period;
+
+     public class Test {
+          public static void main(String [] args) {
+              LocalDate date = LocalDate.parse("2000-01-01");
+              Period period = Period.ofYears(-3000);
+              System.out.println(date.plus(period));
+          }
+     }
+
+     - In the given code, the period -3000 is added to 1st January 2020, and the result is 1st Jan -1000.
+
+2.- Boolean class has a method named "equalsIgnoreCase" that is used to validate the passed String. So, if
+    a passed String is "true", the boolean value stored in the Boolean object is true otherwise false.
+
+    Example:
+
+    - System.out.println(new Boolean("ture")); //outputs false
+    - System.out.println(new Boolean("TRue")); // outputs true
+    - System.out.println(new Boolean("true")); // outputs true
+
+3.- The static method "parse" from LocalDate and LocalTime classes accepts Strings in "9999-99-99" format
+    only, in which month and day part in the passed object referred by text must be of 2 digits.
+
+    Example:
+
+    - To represent 4th September 1996, format String must be "1996-09-04". If we pass "1996-4-9", then an
+      Exception will be thrown.
+
+      LocalDate rambirth = LocalDate.parse("1996-09-04") // outputs 1996-09-04
+      LocalDate rambirth = LocalDate.parse("1996-9-04") // throws an exception because SEPTEMBER is represented
+                                                        // as 9, and should be represented as 09
+
+4.- Strings computed by concatenation at compile time, will be referred by String pool during execution. Compile time
+    String concatenation happens when both of the operands are compile time constants like: literals and final variables.
+
+    Strings computed by concatenation at run time (if the resultant expression is not constant expression)
+    are newly created and therefore distinct.
+
+    Example:
+
+    package com.udayan.oca;
+
+    public class Test {
+        public static void main(String[] args) {
+            final String fName = "James";
+            String lName = "Gosling";
+            String name1 = fName + lName;
+            String name2 = fName + "Gosling";
+            String name3 = "James" + "Gosling";
+            System.out.println(name1 == name2);
+            System.out.println(name2 == name3);
+        }
+    }
+
+5.- "delete" method accepts 2 parameters: delete(int start, int end), where start is inclusive and end is exclusive.
+
+    This method throws StringIndexOutOfBoundsException for following scenarios:
+
+    A. start is negative
+    B. start is greater than sb.length()
+    C. start is greater than end
+
+    If end is greater than the length of StringBuilder object, then StringIndexOutOfBoundsException is not thrown and end
+    is set to sb.length().
+
+    Example:
+
+    StrigBuilder sb = new StringBuilder("helloworld");
+    sb.delete(0,100);
+
+    - In the given code, `sb.delete(0, 100);` is equivalent to `sb.delete(0, sb.length());` and this deletes all the characters
+      from the StringBuilder object. Hence, System.out.println(sb.length()); prints 0 on to the console.
+
+6.- If you want to remove the items from ArrayList, while using Iterator or ListIterator, then use Iterator.remove() or
+    ListIterator.remove() method and NOT List.remove() method.
+
+    In this case ListIterator.remove() method is used. startsWith("A") returns true for "Apricot" and "Almond" so these
+    elements are removed from the list. In the output, [Walnut, Date] is displayed.
+
+
+7.- Two instances of following wrapper objects, created through auto-boxing will always be same, if their primitive values are same:
+
+    Boolean,
+    Byte,
+    Character from \u0000 to \u007f (7f equals to 127),
+    Short and Integer from -128 to 127.
+
+    Example:
+
+    package com.udayan.oca;
+
+    import java.util.ArrayList;
+    import java.util.List;
+
+    public class Test {
+         public static void main(String [] args) {
+             List<Integer> list = new ArrayList<Integer>();
+
+             list.add(27);
+             list.add(27);
+
+             list.add(new Integer(27));
+             list.add(new Integer(27));
+
+             System.out.println(list.get(0) == list.get(1));
+             System.out.println(list.get(2) == list.get(3));
+         }
+    }
+
+    - For 1st statement, list.add(27); => Auto-boxing creates an integer object for 27.
+    - For 2nd statement, list.add(27); => Java compiler finds that there is already an Integer object in the memory with
+      value 27, so it uses the same object.
+    - That is why System.out.println(list.get(0) == list.get(1)); returns true.
+    - new Integer(27) creates a new Object in the memory, so System.out.println(list.get(2) == list.get(3)); returns false
+
+8.- Though Predicate is a generic interface but raw type is also allowed. Type of the variable in lambda expression is
+    inferred by the generic type of Predicate<T> interface.
+
+    package com.udayan.oca;
+
+    import java.util.function.Predicate;
+
+    public class Test {
+         public static void main(String[] args) {
+             String [] arr = {"*", "**", "***", "****", "*****"};
+             Predicate pr1 = s -> s.length() < 4;
+             print(arr, pr1);
+         }
+
+         private static void print(String [] arr, Predicate<String> predicate) {
+             for(String str : arr) {
+                 if(predicate.test(str)) {
+                     System.out.println(str);
+                 }
+             }
+         }
+    }
+
+    In this case, Predicate pr1 = s -> s.length() < 4; Predicate is considered of Object type so variable "s" is of Object
+    type and Object class doesn't have length() method. So, s.length() causes compilation error.

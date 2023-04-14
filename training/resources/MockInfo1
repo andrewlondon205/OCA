@@ -216,4 +216,3 @@ Notes:
     catch(java.io.FileNotFoundException ex) {} will cause compilation error in this case as main(args); will never throw
     FileNotFoundException. But Java allows to catch Exception type, hence catch (Exception ex) {} doesn't cause any compilation
     error.
-

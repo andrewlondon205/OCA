@@ -1,6 +1,7 @@
 package resources;
 
 
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 class Band {
@@ -30,5 +31,6 @@ public class RockBand extends Band {
 
         System.out.println(list);
 
+        DateTimeFormatter f = DateTimeFormatter.ofPattern("MM dd yyyy");
     }
 }
