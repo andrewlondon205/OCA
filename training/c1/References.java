@@ -49,7 +49,33 @@ public class References {
         int a3;
         // a4; DOES NOT COMPILE
 
+        /**
+         *  NAMING IDENTIFIERS RULES:
+         *  The name must begin with a letter or the symbol $ or _.,
+         *  Subsequent characters may also be numbers.
+         *  reserved words are not allowed to be used.
+         */
 
+        //legal
+        String okidentifier;
+        String $OK2Identifier;
+        String _alsoOK1d3ntifi3r;
+        String __SStillOkbutKnotsonice$;
+
+        //illegal
+
+        // String 3DPointClass (identifiers cannot begin with a number hollywood@vine)
+        // String (@ is not a letter, digit, $ or _)
+        // String (*$coffee * is not a letter, digit, $ or _)
+       // public  public is a reserved word
 
     }
+}
+
+enum Keywords {
+
+    ABSTRACT, ASSERT, BOOLEAN, BREAK, BYTE, CASE, CATCH, CHAR, CLASS, CONST, CONTINUE, DEFAULT, DO, DOUBLE, ELSE, ENUM,
+    EXTENDS, FALSE, FINAL, FINALLY, FLOAT, FOR, GOTO, IF, IMPLEMENTS, IMPORT, INSTANCEOF, INT, INTERFACE, LONG, NATIVE,
+    NEW, NULL, PACKAGE, PRIVATE, PROTECTED, PUBLIC, RETURN, SHORT, STATIC, STRICTFP, SUPER, SWITCH, SYNCRONIZED, THIS,
+    THROW, THROWS, TRANSIENT, TRUE, TRY, VOID, VOLATILE, WHILE
 }
