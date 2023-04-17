@@ -43,6 +43,7 @@ public class Variables {
 
     public static void main(String[] args) {
         Variables v = new Variables();
+        System.out.println(v.bool);
         System.out.println(v.v1);
         System.out.println(v.v2);
         System.out.println(v.v3);
@@ -55,6 +56,29 @@ public class Variables {
 
     public void eat( int piecesOfCheese) {
         int bitesOfCheese = 1;
+    }
+
+    public void eatIfHungry(boolean hungry) {
+        if (hungry) {
+            int bitesOfCheese = 1;
+            {
+                boolean teenyBit = true;
+                System.out.println(bitesOfCheese);
+            }
+        }
+        // System.out.println(bitesOfCheese); does not compile because it's out of scope
+    }
+
+    public void eatMore(boolean hungry, int amountOfFood) {
+        int roomInBelly = 5;
+        if (hungry) {
+            boolean timeToEat = true;
+            while(amountOfFood > 0) {
+                int amountEaten = 2;
+                roomInBelly = roomInBelly - amountEaten;
+                amountOfFood = amountOfFood - amountEaten;
+            }
+        }
     }
 
 
