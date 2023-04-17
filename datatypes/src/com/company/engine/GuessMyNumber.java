@@ -19,10 +19,7 @@ public class GuessMyNumber {
 
     }
 
-    public void play () {
-
-
-    }
+    public void play () { }
 
     public int getNumberOfTries() {
         return numberOfTries;
