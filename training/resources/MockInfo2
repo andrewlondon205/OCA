@@ -3,7 +3,7 @@ Exam 2:
 ATTEMPT1: 48/70 -> 68% FAILED
 ATTEMPT2: 65/70 -> 92% PASSED
 
-1.-  Static Method "ofYears" from the class Period can accept both positive and negative values. The minimum supported
+1.-  Static Method "ofYears" from the class Period accepts both positive and negative values. The minimum supported
      LocalDate is :{-999999999-01-01} and maximum supported is LocalDate is: {+999999999-12-31}.
 
      Example:
@@ -85,7 +85,7 @@ ATTEMPT2: 65/70 -> 92% PASSED
     - In the given code, `sb.delete(0, 100);` is equivalent to `sb.delete(0, sb.length());` and this deletes all the characters
       from the StringBuilder object. Hence, System.out.println(sb.length()); prints 0 on to the console.
 
-6.- If you want to remove the items from ArrayList, while using Iterator or ListIterator, then use Iterator.remove() or
+6.- If you want to remove items from ArrayList, while using Iterator or ListIterator, then use Iterator.remove() or
     ListIterator.remove() method and NOT List.remove() method.
 
     In this case ListIterator.remove() method is used. startsWith("A") returns true for "Apricot" and "Almond" so these
@@ -152,3 +152,13 @@ ATTEMPT2: 65/70 -> 92% PASSED
 
     In this case, Predicate pr1 = s -> s.length() < 4; Predicate is considered of Object type so variable "s" is of Object
     type and Object class doesn't have length() method. So, s.length() causes compilation error.
+
+9.- For the OCA exam, check following DateTimeFormatter types:
+
+    - BASIC_ISO_DATE
+    - ISO_DATE
+    - ISO_LOCAL_DATE
+    - ISO_TIME
+    - ISO_LOCAL_TIME
+    - ISO_DATE_TIME
+    - ISO_LOCAL_DATE_TIME.

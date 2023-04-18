@@ -1,0 +1,230 @@
+Exam 3:
+
+ATTEMPT1: 52/70 -> 74% PASSED
+ATTEMPT2: 63/70 -> 90% PASSED
+
+Notes:
+
+1.- Boolean values are not allowed in Switch statements. Compiler will complain if we attempt to use them
+
+    Example:
+    package com.udayan.oca;
+
+    public class Test {
+         public static void main(String[] args) {
+             Boolean b = new Boolean("tRUe");
+             switch(b) {
+                 case true:
+                     System.out.println("ONE");
+                 case false:
+                     System.out.println("TWO");
+                 default:
+                     System.out.println("THREE");
+             }
+         }
+    }
+
+2.- Bear in mind that, when we initialize an array of bytes (primitive or reference type) in the following manner:
+
+    package com.udayan.oca;
+
+    public class Test {
+         public static void main(String[] args) {
+             byte [] arr = new byte[0];
+             Byte [] array = new Byte[0];
+             System.out.println(arr[0]);
+             System.out.println(array[0]);
+         }
+    }
+
+    - arr does not have any elements, nor any capacity to hold values. Hence, attempting to access values
+      through indices will result in ArrayOutOfBoundsException
+
+    - NullPointerException is not thrown.
+
+
+3.- When a child class overrides a method from a parent class. It is required that the access modifier of the
+    method in the child class be of equal or higher visibility. In other words, reducing the visibility is
+    not allowed.
+
+    Example:
+
+    //TestBaseDerived.java
+    package com.udayan.oca;
+
+    class Base {
+         protected void m1() {
+             System.out.println("Base: m1()");
+         }
+    }
+
+    class Derived extends Base {
+         void m1() {
+             System.out.println("Derived: m1()");
+         }
+    }
+
+    public class TestBaseDerived {
+         public static void main(String[] args) {
+             Base b = new Derived();
+             b.m1();
+         }
+    }
+
+    - The following code will give compiler error.
+
+4.- Please note that Strings computed by concatenation at compile time, will be referred by String Pool during execution.
+    Compile time String concatenation happens when both of the operands are compile time constants, such as literal, final
+    variable etc.
+
+    Whereas, Strings computed by concatenation at run time (if the resultant expression is not constant expression) are newly created and therefore distinct.
+
+    Example:
+
+    package com.udayan.oca;
+
+    public class Test {
+        public static void main(String[] args) {
+            final int i1 = 1;
+            final Integer i2 = 1;
+            final String s1 = ":ONE";
+
+            String str1 = i1 + s1;
+            String str2 = i2 + s1;
+
+            System.out.println(str1 == "1:ONE");
+            System.out.println(str2 == "1:ONE");
+        }
+    }
+
+    - For the statement, String str1 = i1 + s1;, i1 is a final variable of int type and s1 is a
+      final variable of String type. Hence, `i1 + s1` is a constant expression which is computed
+      at compile-time and results in String literal "1:ONE".
+
+    - This means during compilation, Java compiler translates the statement:
+
+          String str1 = i1 + s1;
+       to
+          String str1 = "1:ONE";
+
+       As "1:ONE" is a String literal, hence at runtime it will be referred by String Pool.
+
+    - On the other hand, for the statement, String str2 = i2 + s1;, `i2 + s1` is not a constant expression
+      because i2 is neither of primitive type nor of String type, hence it is computed at run-time and
+      returns a non-pool String object "1:ONE".
+
+    - As, str1 refers to String Pool object "1:ONE", hence `str1 == "1:ONE"` returns true, whereas str2 refers to
+      non-Pool String object "1:ONE" and hence `str2 == "1:ONE"` returns false.
+
+5.- Bear in mind that not all classes override "equals" method present in Object class. Here is
+    a list of important classes to remember for the OCA exam that override it:
+
+    - List/ArrayList
+    - String
+
+    Also, be very careful in questions where the method seems to be overridden, but in reality it is overloaded.
+
+    Example:
+
+    //Test.java
+    package com.udayan.oca;
+
+    import java.util.ArrayList;
+    import java.util.List;
+
+    class Student {
+         private String name;
+         private int age;
+
+         Student(String name, int age) {
+             this.name = name;
+             this.age = age;
+         }
+
+         public String toString() {
+             return "Student[" + name + ", " + age + "]";
+         }
+
+         public boolean equals(Student obj) {
+             if(obj instanceof Student) {
+                 Student stud = (Student)obj;
+                 if(this.name.equals(stud.name) && this.age == stud.age) {
+                     return true;
+                 }
+             }
+             return false;
+         }
+    }
+
+    public class Test {
+         public static void main(String[] args) {
+             List<Student> students = new ArrayList<>();
+             students.add(new Student("James", 25));
+             students.add(new Student("James", 27));
+             students.add(new Student("James", 25));
+             students.add(new Student("James", 25));
+
+             students.remove(new Student("James", 25));
+
+             for(Student stud : students) {
+                 System.out.println(stud);
+             }
+         }
+    }
+
+    - In the given code, "equals" method has not been overridden, but overlodad.
+    - A correct overriding implementation of the above-mentioned method can be found below:
+
+      public boolean equals(Object obj) {
+               if(obj instanceof Student) {
+                   Student stud = (Student)obj;
+                   if(this.name.equals(stud.name) && this.age == stud.age) {
+                       return true;
+                   }
+               }
+               return false;
+           }
+
+6.- LocalDate class is immutable and has private constructors only. This implies that an attempt to instantiate the
+    object using "new" keyword will result in compiler failure.
+
+    Example:
+
+    //Test.java
+    package com.udayan.oca;
+
+    import java.time.LocalDate;
+    import java.time.Period;
+
+    public class Test {
+         public static void main(String [] args) {
+              LocalDate obj = new LocalDate(2020, 2, 14);
+              System.out.println(obj.minus(Period.ofDays(10)));
+         }
+    }
+
+ 7.- Java doesn't allow to catch specific checked exceptions if these are not thrown by the statements inside try block.
+
+     catch(FileNotFoundException ex) {} causes  compilation error in this case as System.out.println(1); will never throw
+     FileNotFoundException.
+
+     NOTE: Java allows to catch Exception type. catch(Exception ex) {} will never cause compilation error.
+
+     Example:
+
+     package com.udayan.oca;
+
+     import java.io.FileNotFoundException;
+
+     public class Test {
+          public static void main(String[] args) {
+              try {
+                  System.out.println(1);
+              } catch (NullPointerException ex) {
+                  System.out.println("ONE");
+              } catch (FileNotFoundException ex) {
+                  System.out.println("TWO");
+              }
+              System.out.println("THREE");
+          }
+     }
