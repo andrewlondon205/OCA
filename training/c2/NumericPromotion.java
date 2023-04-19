@@ -9,7 +9,6 @@ public class NumericPromotion {
         long r = x * y;
         //int r = (x * y); does not compile, unless explicit casting is applied
 
-
         double a = 39.21;
         float  b = 2.1f;
         double c = a * b;
