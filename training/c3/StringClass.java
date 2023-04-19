@@ -181,6 +181,17 @@ public class StringClass {
 
         String trimmedString = " \t a b c\n".trim();
         System.out.println(trimmedString);
+
+        /**
+         * METHOD CHAINING
+         * - It is common to call multiple methods on the same String
+         */
+
+        String beginning = "Katy Perry is an outstanding singer and performer";
+        String result = beginning.trim().toLowerCase().replace("y","ii").replace("s","$$");
+        System.out.println(result);
+
+
     }
 }
 
@@ -196,5 +207,13 @@ final class Immutable {
     private String s = "name";
     public String getS() {
         return s;
+    }
+}
+
+class StringBuilderClass {
+
+    public static void main(String[] args) {
+
+
     }
 }
