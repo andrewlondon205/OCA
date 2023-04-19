@@ -37,10 +37,5 @@ public class Operations {
         System.out.println(12.4 % 5); //Outputs 2.4
         System.out.println(10 % 2.3);
 
-
-
     }
-
-
-
 }
