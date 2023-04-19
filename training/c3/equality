@@ -1,0 +1,162 @@
+AzureAD+AlejandriaRamai@NB-ARAMAI MINGW64 ~/Desktop
+$ jshell
+|  Welcome to JShell -- Version 18.0.1.1
+|  For an introduction type: /help intro
+
+jshell> StringBuilder one = new StringBuilder();
+one ==>
+
+jshell> StringBuilder two = new StringBuilder();
+two ==>
+
+jshell> StringBuilder three = one.append("a")
+three ==> a
+
+jshell> three
+three ==> a
+
+jshell> one
+one ==> a
+
+jshell> two
+two ==>
+
+jshell> one == two
+$7 ==> false
+
+jshell> one == three
+$8 ==> true
+
+jshell> two == three
+$9 ==> false
+
+jshell> String x = "Hello World"
+x ==> "Hello World"
+
+jshell> String y = "Hello World"
+y ==> "Hello World"
+
+jshell> x == y
+$12 ==> true
+
+jshell> String z = " Hello World".trim()
+z ==> "Hello World"
+
+jshell> x == z
+$14 ==> false
+
+jshell> String a = new String("Hi there")
+a ==> "Hi there"
+
+jshell> String b = "Hi there"
+b ==> "Hi there"
+
+jshell> a
+a ==> "Hi there"
+
+jshell> b
+b ==> "Hi there"
+
+jshell> a == b
+$19 ==> false
+
+jshell> x == z
+$20 ==> false
+
+jshell> x.equals(z)
+$21 ==> true
+
+jshell> StringBuilder s1 = new StringBuilder("ladygaga")
+|  Error:
+|  ')' expected
+|  StringBuilder s1 = new StringBuilder(▒"ladygaga");
+|                                        ^
+
+jshell> StringBuilder s1 = new StringBuilder("ladygaga")
+s1 ==> ladygaga
+
+jshell> StringBuilder s2 = new StringBuilder("ladygaga")
+s2 ==> ladygaga
+
+jshell> s1.equals(S2)
+|  Error:
+|  cannot find symbol
+|    symbol:   variable S2
+|  s1.equals(S2)
+|            ^^
+
+jshell> s1
+s1 ==> ladygaga
+
+jshell> s2
+s2 ==> ladygaga
+
+jshell> s1.equals(s2)
+$26 ==> false
+
+jshell> s1.equals(s2)
+$27 ==> false
+
+jshell> s1.toString().equals(s2)
+$28 ==> false
+
+jshell> s1
+s1 ==> ladygaga
+
+jshell> s1.append("-katyperry")
+$30 ==> ladygaga-katyperry
+
+jshell> s1
+s1 ==> ladygaga-katyperry
+
+jshell> s2
+s2 ==> ladygaga
+
+jshell> s2.append("-katyperry")
+$33 ==> ladygaga-katyperry
+
+jshell> s1
+s1 ==> ladygaga-katyperry
+
+jshell> s2
+s2 ==> ladygaga-katyperry
+
+jshell> s1.toString().equals(s2.toString())
+$36 ==> true
+
+jshell> public class Tiger {}
+|  Error:
+|  '{' expected
+|  public class Tiger ▒{}
+|                    ^
+
+jshell> public class Tiger {}
+|  created class Tiger
+
+jshell> Tiger t1 = new Tiger();
+t1 ==> Tiger@78e03bb5
+
+jshell> Tiger t2 = new Tiger()
+t2 ==> Tiger@61e4705b
+
+jshell> t1 == t2
+$40 ==> false
+
+jshell> Tiger t3 = t1
+t3 ==> Tiger@78e03bb5
+
+jshell>
+<press tab again to see all possible completions; total possible completions: 572>
+jshell> t1 == t1
+$42 ==> true
+
+jshell> t1 == t2
+$43 ==> false
+
+jshell> t1 == t3
+$44 ==> true
+
+jshell> t1.equals(t2)
+$45 ==> false
+
+jshell>
