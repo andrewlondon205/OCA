@@ -79,4 +79,16 @@ class IncrementDecrement {
        // int z = 9f; // DOES NOT COMPILE
       //  long t = 192301398193810323; // DOES NOT COMPILE
     }
+
+    public static void casting () {
+        int x = (int) 1.0;
+        short y = (short) 1921222;
+        int z = (int) 9l;
+        long t = 192301398193810323L;
+
+        short a = 10;
+        short b = 3;
+        int d = a * b;
+        // short c = a * b; does not compile without explicit casting
+    }
 }
