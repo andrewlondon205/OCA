@@ -13,7 +13,7 @@ ATTEMPT2: 65/70 -> 92% PASSED
      import java.time.LocalDate;
      import java.time.Period;
 
-     public class Test {
+     public class resources.Test {
           public static void main(String [] args) {
               LocalDate date = LocalDate.parse("2000-01-01");
               Period period = Period.ofYears(-3000);
@@ -54,7 +54,7 @@ ATTEMPT2: 65/70 -> 92% PASSED
 
     package com.udayan.oca;
 
-    public class Test {
+    public class resources.Test {
         public static void main(String[] args) {
             final String fName = "James";
             String lName = "Gosling";
@@ -106,7 +106,7 @@ ATTEMPT2: 65/70 -> 92% PASSED
     import java.util.ArrayList;
     import java.util.List;
 
-    public class Test {
+    public class resources.Test {
          public static void main(String [] args) {
              List<Integer> list = new ArrayList<Integer>();
 
@@ -134,7 +134,7 @@ ATTEMPT2: 65/70 -> 92% PASSED
 
     import java.util.function.Predicate;
 
-    public class Test {
+    public class resources.Test {
          public static void main(String[] args) {
              String [] arr = {"*", "**", "***", "****", "*****"};
              Predicate pr1 = s -> s.length() < 4;

@@ -26,7 +26,7 @@ Notes:
         }
     }
 
-    Note: The call to the parents constructor must be present in all child constructors.
+    Note: The call to the parents constructor must be present in at least one of the constructors of the child class.
 
 2.- It is not possible to perform arithmetic operations on array elements if the array type is not
     that of a primitive, and the array is empty. In such scenario, a NullPointerException will be
@@ -34,7 +34,7 @@ Notes:
 
     Example:
 
-    public class Test {
+    public class resources.Test {
          public static void main(String[] args) {
              Double [] arr = new Double[2]; //THROWS NULLPOINTER EXCEPTION
              System.out.println(arr[0] + arr[1]);
@@ -68,7 +68,7 @@ Notes:
 
     import java.time.LocalTime;
 
-    public class Test {
+    public class resources.Test {
          public static void main(String[] args) {
              LocalTime time = LocalTime.of(16, 40);
              String amPm = time.getHour() >= 12 ? (time.getHour() == 12) ? "PM" : "AM";
@@ -108,20 +108,20 @@ Notes:
     import java.io.FileNotFoundException;
     import java.io.IOException;
 
-    abstract class Super {
+    abstract class resources.Super {
          public abstract void m1() throws IOException;
     }
 
-    class Sub extends Super {
+    class resources.Sub extends resources.Super {
          @Override
          public void m1() throws IOException {
              throw new FileNotFoundException();
          }
     }
 
-    public class Test {
+    public class resources.Test {
          public static void main(String[] args) {
-             Super s = new Sub();
+             resources.Super s = new resources.Sub();
              try {
                  s.m1();
              } catch (FileNotFoundException e) {
@@ -135,8 +135,8 @@ Notes:
     Note: The following code gives compiler error because even though an instance of FileNotFoundException
           is thrown by method m1() at runtime, but method m1() declares to throw IOException.
 
-          Reference variable s is of Super type and hence for compiler, call to s.m1(); is to method m1()
-          of Super, which throws IOException. And as IOException is checked exception hence calling code should
+          Reference variable s is of resources.Super type and hence for compiler, call to s.m1(); is to method m1()
+          of resources.Super, which throws IOException. And as IOException is checked exception hence calling code should
           handle it.
 
           As calling code doesn't handle IOException or its super type, so s.m1(); gives compilation error.
@@ -156,7 +156,7 @@ Notes:
     import java.util.ArrayList;
     import java.util.List;
 
-    public class Test {
+    public class resources.Test {
          public static void main(String[] args) {
              List<Character> list = new ArrayList<>();
              list.add(0, 'V');
@@ -182,7 +182,7 @@ Notes:
 
     package com.udayan.oca;
 
-    public class Test {
+    public class resources.Test {
          public static void main(String[] args) {
              short [] args = new short[]{50, 50};
              args[0] = 5;
@@ -196,7 +196,7 @@ Notes:
 
     package com.udayan.oca;
 
-    public class Test {
+    public class resources.Test {
          public static void main(String[] args) {
              try {
                  main(args);

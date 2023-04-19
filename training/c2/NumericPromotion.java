@@ -86,6 +86,14 @@ class IncrementDecrement {
         short a = 10;
         short b = 3;
         int d = a * b;
+        short res = (short) (a*b); // alternative option
         // short c = a * b; does not compile without explicit casting
+
+        // COMPOUND ASSIGNMENT CASTING
+
+        long var1 = 10;
+        int var2 = 5;
+        // var2 = var2 * var1; does not compile
+        var2 *= var1; // statement does compile
     }
 }

@@ -10,7 +10,7 @@ Notes:
     Example:
     package com.udayan.oca;
 
-    public class Test {
+    public class resources.Test {
          public static void main(String[] args) {
              Boolean b = new Boolean("tRUe");
              switch(b) {
@@ -28,7 +28,7 @@ Notes:
 
     package com.udayan.oca;
 
-    public class Test {
+    public class resources.Test {
          public static void main(String[] args) {
              byte [] arr = new byte[0];
              Byte [] array = new Byte[0];
@@ -83,7 +83,7 @@ Notes:
 
     package com.udayan.oca;
 
-    public class Test {
+    public class resources.Test {
         public static void main(String[] args) {
             final int i1 = 1;
             final Integer i2 = 1;
@@ -126,7 +126,7 @@ Notes:
 
     Example:
 
-    //Test.java
+    //resources.Test.java
     package com.udayan.oca;
 
     import java.util.ArrayList;
@@ -156,7 +156,7 @@ Notes:
          }
     }
 
-    public class Test {
+    public class resources.Test {
          public static void main(String[] args) {
              List<Student> students = new ArrayList<>();
              students.add(new Student("James", 25));
@@ -190,13 +190,13 @@ Notes:
 
     Example:
 
-    //Test.java
+    //resources.Test.java
     package com.udayan.oca;
 
     import java.time.LocalDate;
     import java.time.Period;
 
-    public class Test {
+    public class resources.Test {
          public static void main(String [] args) {
               LocalDate obj = new LocalDate(2020, 2, 14);
               System.out.println(obj.minus(Period.ofDays(10)));
@@ -216,7 +216,7 @@ Notes:
 
      import java.io.FileNotFoundException;
 
-     public class Test {
+     public class resources.Test {
           public static void main(String[] args) {
               try {
                   System.out.println(1);

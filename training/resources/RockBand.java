@@ -16,7 +16,7 @@ public class RockBand extends Band {
         super(1);
     }
     public RockBand() {
-        super(10);
+        this(210);
     }
 
     public static void main(String[] args) {
