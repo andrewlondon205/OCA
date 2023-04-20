@@ -220,6 +220,7 @@ class StringBuilderClass {
         //insert();
        //deleteMethods();
         reverse();
+
     }
 
     public static void gettingStarted() {
