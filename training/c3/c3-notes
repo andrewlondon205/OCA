@@ -5,4 +5,3 @@ String Pool
     this issue by reusing common ones. The string pool, also known as the intern pool, is a location in the
     Java virtual machine (JVM) that collects all these strings.
 
-
