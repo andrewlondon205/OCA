@@ -1,1 +1,258 @@
-XD
+
+AzureAD+AlejandriaRamai@NB-ARAMAI MINGW64 ~/Desktop
+$ jshell
+|  Welcome to JShell -- Version 18.0.1.1
+|  For an introduction type: /help intro
+
+jshell> import java.time.*
+
+jshell> //LocalDate: contains just a date - no time and no time zone
+
+jshell> // a good example isbirthday
+
+jshell> // LocalTime: contains just a time - no date and no time zone. E.g: 12:00
+
+jshell> // LocalDateTime: Contains both a date and time, but no time zone. E.g: Apr 2 1992 - 20:32
+
+jshell> LocalDate().now()
+|  Error:
+|  cannot find symbol
+|    symbol:   method LocalDate()
+|  LocalDate().now()
+|  ^-------^
+
+jshell> LocalDate.now()
+$2 ==> 2023-04-20
+
+jshell> LocalTime.now()
+$3 ==> 16:13:44.358494100
+
+jshell> LocalDateTime.now()
+$4 ==> 2023-04-20T16:13:56.622042100
+
+jshell> // Each of the three classes has a static method called "now()"
+
+jshell> LocalDate date1 = LocalDate.of(1996,Month.SEPTEMBER,4)
+date1 ==> 1996-09-04
+
+jshell> LocalDate date2 = LocalDate.of(1987,11,11)
+date2 ==> 1987-11-11
+
+jshell> // method signatures are as follows
+
+jshell> //public static LocalDate of(int year, int month, int dayOfMonth)
+
+jshell> //public static LocalDate of(int year, Month month, int dayOfMonth)
+
+jshell> //Month is enum
+
+jshell> LocalTime time1 = LocalTime.of(16,23)
+time1 ==> 16:23
+
+jshell> LocalTime time2 = LocalTime.of(16,24,42)
+time2 ==> 16:24:42
+
+jshell> LocalTime time3 = LocalTime.of(14,24,32,53)
+time3 ==> 14:24:32.000000053
+
+jshell> // public static LocalTime of(int hour, int minute)
+
+jshell> // public static LocalTime of(int hour, in minut, int second9
+
+jshell> // public static LocalTime of(int hour, in minut, int second)
+
+jshell> // public static LocalTime of(int hour, in minut, int second, int nanos)
+
+jshell> LocalDateTime dateTime1 = LocalDateTime.of(2021, Month.AUGUST, 25, 18,20,42)
+dateTime1 ==> 2021-08-25T18:20:42
+
+jshell> LocalDateTime dateTime2 = LocalDateTime.of(date1,time1)
+dateTime2 ==> 1996-09-04T16:23
+
+jshell> //signatures
+
+jshell> //public static LocalDateTime of(int year, int month, int dayOfMonth, int hour, int minute)
+
+
+jshell> //public static LocalDateTime of(int year, int month, int dayOfMonth, int hour, int minute, int second)
+
+jshell> //public static LocalDateTime of(int year, int month, int dayOfMonth, int hour, int minute, int second, int nanos)
+
+jshell> //public static LocalDateTime of(int year, Month month, int dayOfMonth, int hour, int minute)
+
+jshell> //public static LocalDateTime of(int year, Month month, int dayOfMonth, int hour, int minute, int second)
+
+jshell> //public static LocalDateTime of(int year, Month month, int dayOfMonth, int hour, int minute, int second, int nanos)
+
+jshell> //NOTE: we did not use constructors in any of the examples. This means that the classes have private constructors to force the use of static methods
+
+jshell> // LocalDate d = new LocalDate(); does not compile
+
+jshell> LocalDate.of(2023,Month.MARCH,33)
+|  Exception java.time.DateTimeException: Invalid value for DayOfMonth (valid values 1 - 28/31): 33
+|        at ValueRange.checkValidValue (ValueRange.java:319)
+|        at ChronoField.checkValidValue (ChronoField.java:718)
+|        at LocalDate.of (LocalDate.java:252)
+|        at (#12:1)
+
+jshell> LocalDate date = LocalDate.now()
+date ==> 2023-04-20
+
+jshell> date = date.plusDays(2)
+date ==> 2023-04-22
+
+jshell> date = date.plusDays(6)
+date ==> 2023-04-28
+
+jshell> date = date.plusWeeks(1)
+date ==> 2023-05-05
+
+jshell> date = date.plusMonths(1)
+date ==> 2023-06-05
+
+jshell> date = date.plusYears(5)
+date ==> 2028-06-05
+
+jshell> LocalDate date = LocalDate.of(2023,10,13)
+date ==> 2023-10-13
+
+jshell> LocalTime time = LocalTime.of(5,15)
+time ==> 05:15
+
+jshell> LocalDateTime dateTime = LocalDateTime.of(date,time)
+dateTime ==> 2023-10-13T05:15
+
+jshell> dateTime = dateTime.minusDays(1)
+dateTime ==> 2023-10-12T05:15
+
+jshell> dateTime = dateTime.minusHours(10)
+dateTime ==> 2023-10-11T19:15
+
+jshell> dateTime = dateTime.minusSeconds(30)
+dateTime ==> 2023-10-11T19:14:30
+
+jshell> LocalDateTime erik = LocalDate.of(1999,11,19)
+|  Error:
+|  incompatible types: java.time.LocalDate cannot be converted to java.time.LocalDateTime
+|  LocalDateTime erik = LocalDate.of(1999,11,19);
+|                       ^----------------------^
+
+jshell> LocalDate erik = LocalDate.of(1999,11,19)
+erik ==> 1999-11-19
+
+jshell> LocalTime btime = LocalTime.of(19,11,00)
+btime ==> 19:11
+
+jshell> LocalDateTime details = LocalDateTime.of(erik,btime)
+details ==> 1999-11-19T19:11
+
+jshell> details = details.minusDays(1).minusHours(10).minusSeconds(25)
+details ==> 1999-11-18T09:10:35
+
+jshell> // When lots of manipulations are required, chaining is advised
+
+jshell> //watch out tricks during the exam
+
+jshell> details.plusYears(23)
+$29 ==> 2022-11-18T09:10:35
+
+jshell> details
+details ==> 1999-11-18T09:10:35
+
+jshell> //LocalDateTime is immutable just like String
+
+jshell> // Exam may also test to see if youremember what each of the date and time objects includes
+
+jshell> LocalDate date = LocalDate.of(2023,4,23)
+date ==> 2023-04-23
+
+jshell> date = date.plusMinutes(1)
+|  Error:
+|  cannot find symbol
+|    symbol:   method plusMinutes(int)
+|  date = date.plusMinutes(1)
+|         ^--------------^
+
+jshell> //compilation error
+
+jshell> // plusYears/minusYears can call on LocalDate, cannot call on LocalTime, can call on LocalDateTime
+
+jshell> // plusMonths/minusMonths can call on LocalDate, cannot call on LocalTime, can call on LocalDateTime
+
+jshell> // plusWeeks/minusWeeks can call on LocalDate, cannot call on LocalTime, can call on LocalDateTime
+
+jshell> // plusDays/minusDays can call on LocalDate, cannot call on LocalTime, can call on LocalDateTime
+
+jshell> // plusHours/minusHours cannot call on LocalDate, can call on LocalTime, can call on LocalDateTime
+
+jshell> // plusMinutes/minusMinutes cannot call on LocalDate, can call on LocalTime, can call on LocalDateTime
+
+jshell> // plusSeconds/minusSeconds cannot call on LocalDate, can call on LocalTime, can call on LocalDateTime
+
+jshell> // plusNanos/minusNanos cannot call on LocalDate, can call on LocalTime, can call on LocalDateTime
+
+jshell> //WORKING WITH PERIODS
+
+jshell> LocalDate d = LocalDate.toEpochDay()
+|  Error:
+|  non-static method toEpochDay() cannot be referenced from a static context
+|  LocalDate d = LocalDate.toEpochDay();
+|                ^------------------^
+|  Error:
+|  incompatible types: long cannot be converted to java.time.LocalDate
+|  LocalDate d = LocalDate.toEpochDay();
+|                ^--------------------^
+
+jshell> LocalDate.toEpochDay()
+|  Error:
+|  non-static method toEpochDay() cannot be referenced from a static context
+|  LocalDate.toEpochDay()
+|  ^------------------^
+
+jshell> date
+date ==> 2023-04-23
+
+jshell> date.toEpochDay()
+$33 ==> 19470
+
+jshell> Period annually = Period.ofYears(1)
+annually ==> P1Y
+
+jshell> Period quarterly = Period.OfMonths(3)
+|  Error:
+|  cannot find symbol
+|    symbol:   method OfMonths(int)
+|  Period quarterly = Period.OfMonths(3);
+|                     ^-------------^
+
+jshell> Period quarterly = Period.OfMonths(3)
+|  Error:
+|  cannot find symbol
+|    symbol:   method OfMonths(int)
+|  Period quarterly = Period.OfMonths(3);
+|                     ^-------------^
+
+jshell> Period quarter = Period.ofMonths(3)
+quarter ==> P3M
+
+jshell> Period everythreeWeeks = Period.ofWeeks(3)
+everythreeWeeks ==> P21D
+
+jshell> Period everyOtherDay = Period.ofDays(2)
+everyOtherDay ==> P2D
+
+jshell> Period everyYearAndWeek = Period.of(1,0,7)
+everyYearAndWeek ==> P1Y7D
+
+jshell> // one catch: chaining is not allowed
+
+jshell> Period hour = Period.ofHours(2)
+|  Error:
+|  cannot find symbol
+|    symbol:   method ofHours(int)
+|  Period hour = Period.ofHours(2);
+|                ^------------^
+
+jshell> // only the last will be applied during chaining
+
+jshell>
