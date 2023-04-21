@@ -1,5 +1,6 @@
 package c3;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -59,7 +60,7 @@ public class JavaArrays {
 
         int [] numbers = new int [10];
         for (int i = 0; i < numbers.length; i++)
-            numbers[i] = i + 5;
+            numbers[i] = i + 5; //throws ArrayIndexOutOfBoundsException
 
         System.out.println(Arrays.toString(numbers));
 
@@ -105,6 +106,37 @@ public class JavaArrays {
                 System.out.print(twoD[i][j] + " "); // print element
             System.out.println(); // time for a new row
         }
+
+    }
+}
+
+class ArrayListClass {
+    public static void main(String[] args) {
+
+    }
+
+    public static void usingArrayList () {
+
+        /**
+         * import java.util.*  import whole package including ArrayList
+         * import java.util.ArrayList;  import just ArrayList
+         *
+         */
+
+        // Three ways of creating arraylists
+
+        ArrayList list1 = new ArrayList(); // creates an ArrayList containing space for the default number of elements but doesn't fill any slots yet
+        ArrayList list2 = new ArrayList(10); // creates an ArrayList containing specific number of slots, but again doesn't assign any
+        ArrayList list3 = new ArrayList(list2);// tells Java that we want to make a copy of another ArrayList.
+
+        //ArrayList with Generics
+        // To specify the type of data we want for our arraylist
+        ArrayList<String> list4 = new ArrayList<String>();
+        ArrayList<String> list5 = new ArrayList<>();
+
+        List<String> list6 = new ArrayList<>();
+        // ArrayList<String> list7 = new List<>(); does not compile because List is an interface and interfaces cannot be instantiated directly
+
 
 
 
