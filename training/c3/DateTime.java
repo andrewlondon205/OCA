@@ -9,7 +9,6 @@ public class DateTime {
     public static void main(String[] args) {
       //  workingwithDates();
         //manipulatingDatesTimes();
-
     }
 
     public static void workingwithDates () {
@@ -248,7 +247,7 @@ class Periods {
          */
 
         DateTimeFormatter ft = DateTimeFormatter.ofPattern("MM dd yyy");
-        LocalDate aDate = LocalDate.parse("2021-12-28");
+        LocalDate aDate = LocalDate.parse("2021-12-28"); // will throw an exception if we provide an invalid format date
         System.out.println(aDate);
     }
 
