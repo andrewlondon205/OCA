@@ -4,6 +4,12 @@ public class Methods {
 
     public static void main(String[] args) {
         String a ;
+        call(1);
+        call(1,2);
+        call(1,2,3);
+        call(1,new int [] {4,5});
+        // call (1, null); throws nullpointerException
+        test(11, 22);
     }
 
     /**
@@ -165,5 +171,19 @@ public class Methods {
     // public void swim3 (int ... nums, int start) {} does not compile because varargs is not placed at the end
     // public void swim4 (int ... start, int ... nums) {} does not compile because varargs is not placed at the end
 
+    public static void call (int start, int ... numbers) {
+        System.out.println(numbers.length);
+    }
+
+    public static void test(int ... numbers) {
+        System.out.println(numbers[1]);
+    }
 
 }
+
+class StaticMethods {
+    public static void main(String[] args) {
+
+    }
+}
+
