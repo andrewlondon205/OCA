@@ -55,9 +55,15 @@ class Examples {
 /**
  * CREATING IMMUTABLE CLASSES
  *
+ * - Encapsulating data is helpful because it prevents callers from making uncontrolled changes to your class.
+ * - Another common technique is making classes immutable so they cannot be changed at all.
+ * - Immutable classes are helpful because you know they will always be the same. You can pass them around your
+ *   application with a guarantee that the caller didn’t change anything. This helps make programs easier to maintain.
+ *
+ * - One step in making a class immutable is to omit the setters. But wait: we still want the caller to be able to specify
+ *   the initial value—we just don’t want it to change after the object is created. Constructors to the rescue!
  *
  */
-
 
 class ImmutableSwan {
     private int numberEggs;
@@ -67,3 +73,34 @@ class ImmutableSwan {
     }}
 
 
+class NotImmutable {
+    private StringBuilder builder;
+
+    public NotImmutable(StringBuilder b) {
+        builder = b;
+        //builder = new StringBuilder(b) -> to render it immutable
+    }
+
+    public StringBuilder getBuilder() {
+        return builder;
+        // return new StringBuilder(builder); -> to render it immutable
+    }
+
+    public static void main(String[] args) {
+        StringBuilder sb = new StringBuilder("initial");
+        NotImmutable problem = new NotImmutable(sb);
+        sb.append(" added");
+
+        StringBuilder gotBuilder = problem.getBuilder();
+        gotBuilder.append(" more");
+        System.out.println(problem.getBuilder());
+
+        /**
+         * - This outputs "initial added more"—clearly not what we were intending.  The problem is that we are just passing
+         *   the same StringBuilder all over.
+         * - The caller has a reference since it was passed to the constructor.
+         * - Anyone who calls the getter gets a reference too. A solution is to make a copy of the mutable object.
+         * - This is called a defensive copy.
+         */
+    }
+}

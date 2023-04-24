@@ -250,6 +250,4 @@ class Periods {
         LocalDate aDate = LocalDate.parse("2021-12-28"); // will throw an exception if we provide an invalid format date
         System.out.println(aDate);
     }
-
-
 }
