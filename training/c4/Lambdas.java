@@ -1,6 +1,7 @@
 package c4;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
 
@@ -136,7 +137,11 @@ class PredicateSearch {
         print(animals, a -> a.canSwim());
         print(animals, f -> f.toString().length() > 1 && f.toString().length() <= 4);
 
+        List<String> girls = new ArrayList<>(Arrays.asList("erica vaccari", "giulia cipriani", "martina caradonna"));
+        System.out.println(girls);
 
+        girls.removeIf( k -> ! k.endsWith("i"));
+        System.out.println(girls);
     }
 
     private static void print(List<Animal> animals, Predicate<Animal> checker) {
