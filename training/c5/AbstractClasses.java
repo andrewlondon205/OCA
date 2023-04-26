@@ -66,7 +66,7 @@ abstract class Turtle {
  * - As long as you do not mark it as final, the subclass still has the option to override it, as explained in the previous
  *   section.
  *
- * - Next, we note that an abstract class cannot be marked as final for a somewhat obvi- ous reason. By definition, an
+ * - Next, we note that an abstract class cannot be marked as final for a somewhat obvious reason. By definition, an
  *   abstract class is one that must be extended by another class to be instantiated, whereas a final class can’t be
  *   extended by another class.
  *
