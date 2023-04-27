@@ -66,13 +66,14 @@ public class StringClass {
 
         String word = "animals";
         String alp = "";
-        System.out.println(word.length());
-        System.out.println(alp.length());
+        System.out.println(word.length()); //7
+        System.out.println(alp.length()); //0
 
         // char charAt(int index) =  lets you query the string to find out what character is at a specific index.
         System.out.println(word.charAt(2)); // i
         System.out.println(word.charAt(0)); // a
        // System.out.println(word.charAt(210)); // throws StringIndexOutOfBounds exception
+        //System.out.println(word.charAt(-12)); // throws StringIndexOutOfBounds exception
 
         /**
          *
@@ -82,9 +83,11 @@ public class StringClass {
          * - It can also start from a requested position. The method signatures are as follows:
          *
          * int indexOf(char ch)
-         * int indexOf(char ch, index fromIndex) int indexOf(String str)
+         * int indexOf(char ch, index fromIndex)
+         * int indexOf(String str)
          * int indexOf(String str, index fromIndex)
          *
+         * Note: The method does not throw an exception in case of invalid index
          */
 
         String term = "KatyPerry";
@@ -102,6 +105,10 @@ public class StringClass {
          *  -  As usual, this is a zero-based index. There is an optional second parameter, which is the end index you
          *     want to stop at.
          *  - second parameter is exclusive (gets ignored)
+         *  - Method signature:
+         *
+         *  public String substring(int startIndex)
+         *  public String substring(int startIndex, int endIndex)
          *
          */
         // KatyPerry
@@ -110,8 +117,9 @@ public class StringClass {
         System.out.println(term.substring(3,4)); // y
         System.out.println(term.substring(3,7)); // yPer
         System.out.println(term.substring(3,3)); //empty string
-    //  System.out.println(term.substring(3,2)); // throws exception
-    //  System.out.println(term.substring(3,8)); // throws exception
+        //System.out.println(term.substring(3,2)); // throws exception
+        //System.out.println(term.substring(3,8)); // throws exception
+        //System.out.println(term.substring(-332,842)); // throws exception
 
         /** toLowerCase() and toUppercase()
          * String toLowerCase()
@@ -255,8 +263,8 @@ class StringBuilderClass {
         StringBuilder sb3 = new StringBuilder(10);
 
         /**
-         * Size = refers to the number of characters currently present in the sequence
-         * Capacity = refers to the number of characters that the sequence can hold.
+         * - Size = refers to the number of characters currently present in the sequence
+         * - Capacity = refers to the number of characters that the sequence can hold.
          *
          * - Initial capacity of StringBuilder is 16, unless the programmer happens to choose one in the beginning
          * - Since StringBuilder is mutable, the capacity can change.
@@ -285,7 +293,7 @@ class StringBuilderClass {
         /**
          * it adds the parameter to the StringBuilder and returns a reference to the current StringBuilder.
          *
-         * StringBuilder append (String str)
+         * StringBuilder append (String str) // returns the whole object
          */
         StringBuilder sb = new StringBuilder().append(1).append('c');
         sb.append("-").append(true).append(new Date());

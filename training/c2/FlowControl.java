@@ -41,6 +41,11 @@ class WhileLoop {
 
         } while (bitesOfCheese > 0 && roomInBelly > 0);
         System.out.println(bitesOfCheese + " pieces of cheese left");
+
+/*        final boolean flag = false;
+        while(flag) {
+            System.out.println("hi");
+        }*/ // does not compile
     }
 
     public static void executeOnce() {

@@ -668,3 +668,21 @@ class HardExample {
         System.out.println(exceptions());
     }
 }
+
+class MyException extends Exception {}
+class AdditionalExample {
+
+    public static void fall () throws IOException, MyException {
+        throw new IOException();
+    }
+    public static void main(String[] args) {
+
+        try {
+            String s = null;
+            s.length();
+            fall();
+        } catch (RuntimeException | IOException  | MyException exception ) {
+            System.out.println();
+        }
+    }
+}

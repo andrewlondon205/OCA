@@ -143,7 +143,10 @@ public class Methods {
     // public jump3 void () {} does not compile return type cannot be placed at the end
     public void Jump_$() {
     }
+
     // public void () {} does not compile because method name is missing
+    public void _flyhigh() {}
+    public void $flydown() {}
 
     /**
      * Parameter List

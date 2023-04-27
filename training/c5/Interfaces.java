@@ -468,7 +468,7 @@ interface SharkFamily extends HasFins {
     public double getLongestFinLength();
 
 /*    public boolean doFinsHaveScales () {
-    does not compile because
+    does not compile because it lacks default keyword
     }*/
 
     public default boolean doFinsHaveScales () {
@@ -585,6 +585,8 @@ interface Hop {
 }
 
 class Bunny implements Hop {
+
+
     public void printDetails () {
         // System.out.println(getJumpHeight()); does not compile without an explicit reference to the name of the interface
         System.out.println(Hop.getJumpHeight());

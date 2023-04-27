@@ -108,7 +108,7 @@ class RabbitsMultiply {
         Rabbit1 r1 = new Rabbit1();
         Rabbit2 r2 = new Rabbit2();
         Rabbit3 r3 = new Rabbit3(true);
-        // Rabbit4 r4 = new Rabbit4(); does not compile because
+        // Rabbit4 r4 = new Rabbit4(); does not compile because the constructor is private
 
     }
 }
@@ -265,6 +265,6 @@ class YetMoreInitializationOrder {
 }
 
 /**
- * 2 4 5 6 8
+ * 2 4 6 8 5
  */
 
