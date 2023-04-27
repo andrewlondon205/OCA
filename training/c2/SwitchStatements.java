@@ -33,8 +33,13 @@ public class SwitchStatements {
          */
 
         int grahaNumber = 5;
+        final int k = 20;
 
         switch (grahaNumber) {
+
+            case k:
+                break;
+
             case 1:
                 System.out.println("The chosen graha is : " + NavaGraha.SURYA);
                 System.out.println("Graha Number : " + NavaGraha.SURYA.getValue());

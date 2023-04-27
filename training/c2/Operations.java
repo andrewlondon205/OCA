@@ -97,7 +97,7 @@ class LogRelOperators {
          * If left-hand side of the expression is false, the right-hand side is NEVER executed.
          * If left-hand side of the expression is true, the right-hand side is executed
          */
-         if (true && ++betha < 22)
+        if (true && ++betha < 22)
              System.out.println("SHORT-CUIT AND: It's less than 21");
          System.out.println(betha);
 
@@ -112,6 +112,7 @@ class LogRelOperators {
          int value = 6;
          boolean result = (value >= 6) || (++value <= 7);
          System.out.println(result);
+         System.out.println(value);
     }
 }
 
