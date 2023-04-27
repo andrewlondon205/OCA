@@ -8,7 +8,7 @@ public class Primitives {
         boolean a = true;
         boolean b = false;
 
-        //Integer numbers
+        //Integral numbers
         byte n1 = 10; // 8 bit
         byte n2 = -20;
         short n3 = 215; // 16 bit
@@ -22,6 +22,9 @@ public class Primitives {
         //Floating Point numbers
         float f1 = 10.5f; // requires f at the end 32 bit
         double f2 = 215.02; // 64 bit
+        double f3 = 241.231f; // accepts f
+        double f4 = 923.12d; // accepts d, but neither among f and d get displayed when printed
+
 
         System.out.println("Byte minimum value: " + Byte.MIN_VALUE);
         System.out.println("Byte maximum value: " + Byte.MAX_VALUE);
@@ -50,7 +53,7 @@ public class Primitives {
         //double noAtStart = _1000.00; DOES NOT COMPILE
         //double notAtEnd = 1000.00_; DOES NOT COMPILE
         //double notByDecimal = 1000_.00; DOES NOT COMPILE
-        // double annoyingButLegal = 1_00_0.0_0; THIS ONE COMPILES
+        double annoyingButLegal = 1_00_0.0_0; //THIS ONE COMPILES
 
     }
 }

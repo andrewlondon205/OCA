@@ -51,7 +51,7 @@ public class References {
 
         /**
          *  NAMING IDENTIFIERS RULES:
-         *  The name must begin with a letter or the symbol $ or _.,
+         *  The name must begin with a letter or the symbol $ or _.
          *  Subsequent characters may also be numbers.
          *  reserved words are not allowed to be used.
          */
@@ -61,6 +61,7 @@ public class References {
         String $OK2Identifier;
         String _alsoOK1d3ntifi3r;
         String __SStillOkbutKnotsonice$;
+        String $hello;
 
         //illegal
 

@@ -14,7 +14,10 @@ import java.sql.*;// an alternative way to import the Date class from sql packag
  * Note2: If we try to import the date class in the following manner:
  * import java.util.*;
  * import java.sql.*;
+ * import java.util.*.*
  *
+ * - Wildcard does not look for classes recursively. import java.util.* means we want all classes present in util package
+ * - It doesn't look for classes in subpackages inside java.util
  * - Compiler will output the following: the type Date is ambiguous
  */
 
