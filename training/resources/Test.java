@@ -14,22 +14,25 @@ class Sub extends Super {
     }
 }
 
-
 public class Test {
     public static void main(String[] args) {
         Sub s = new Sub();
         try {
             s.m1();
-        } catch (IOException e) {
-            System.out.print("M");
+
+        } catch (FileNotFoundException e) {
+            System.out.println("X");
+        }
+        catch (IOException e) {
+            System.out.print("Y");
         } finally {
-            System.out.print("N");
+            System.out.print("Z");
         }
     }
 
 }
 
-interface ILog {
+/*interface ILog {
     default void log() {
         System.out.println("ILog");
     }
@@ -41,4 +44,17 @@ abstract class Log {
     }
 }
 
-class MyLogger extends Log implements ILog {}
+class MyLogger extends Log implements ILog {}*/
+
+class TestDriver {
+
+    private static void add(double d1, double d2) {
+        System.out.println("double version: " + (d1 + d2));
+    }
+    private static void add(Double d1, Double d2) {
+        System.out.println("Double version: " + (d1 + d2));
+    }
+    public static void main(String[] args) {
+   //     add(10.0, new Double(10.0));
+    }
+}

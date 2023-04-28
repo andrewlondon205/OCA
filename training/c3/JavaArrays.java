@@ -3,6 +3,7 @@ package c3;
 import java.util.*;
 
 public class JavaArrays {
+
     public static void main(String[] args) {
         //  creatingArrays();
         //  usingArrays();
@@ -76,6 +77,13 @@ public class JavaArrays {
         int[] elements = {4, 2, 8, 10, 32, -5, -85};
         Arrays.sort(elements);
         System.out.println(Arrays.toString(elements));
+
+        String s1 = "CRICKET";
+        StringBuilder sb = new StringBuilder(s1);
+
+
+        System.out.println(sb.equals("CRICKET") ? "X" : (sb.equals(new StringBuilder(s1)) ? "Y" : "Z"));
+
     }
 
     public static void binarySearch() {

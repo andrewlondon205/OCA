@@ -1,0 +1,316 @@
+Exam4:
+
+ATTEMPT1: 41/70 -> 58% FAILED
+ATTEMPT2: 50/70 -> 71% PASSED
+ATTEMPT3: 52/70 -> 74% PASSED
+ATTEMPT4: 61/70 -> 87% PASSED
+
+Notes:
+
+1.- Bear in mind that, sometimes, method overloading can create ambiguity when the input parameters are very similar t
+    each other. Pay special attention to the method signatures, the parameters, as well as the order in which the
+    methods are overloaded:
+
+    a.- exact type
+    b.- larger type
+    c.- autoboxing
+    d.- vargargs
+
+    Example:
+
+    package com.udayan.oca;
+
+    public class Test {
+
+         private static void add(double d1, double d2) {
+             System.out.println("double version: " + (d1 + d2));
+         }
+
+         private static void add(Double d1, Double d2) {
+             System.out.println("Double version: " + (d1 + d2));
+         }
+
+         public static void main(String[] args) {
+             add(10.0, new Double(10.0));
+         }
+
+    - In the given code, the reason why the code doesn't compile is because the compiler doesn't know which among
+      the two overloaded methods to choose.
+
+    - add(10) tells java to choose the first method, while add(new Double(10)) tells java to choose the second,
+      therefore the conflict.
+
+    - The code does not compile
+
+2.- LocalDate and LocalTime classes provide an implementation of equals() method, meaning that if we compare two dates
+    that are the same, the method will return true. However, there is slightly different method that performs the same
+    operation known as "isEqual()"
+
+    - LocalDate.equals, like most other equals method implementations, will always return false if you pass it something
+      other than a LocalDate, even if they represent the same day:
+
+      Example1
+
+      - System.out.println(LocalDate.now().equals(HijrahDate.now())); // false
+      - ChronoLocalDate.isEqual compares whether the two dates are the same day, i.e. the same point on the local time line:
+      - System.out.println(LocalDate.now().isEqual(HijrahDate.now())); // true
+
+      Example2
+
+      //Test.java
+      package com.udayan.oca;
+
+      import java.time.LocalDate;
+
+      public class Test {
+           public static void main(String [] args) {
+               LocalDate date1 = LocalDate.parse("1980-03-16");
+               LocalDate date2 = LocalDate.parse("1980-03-16");
+               System.out.println(date1.equals(date2) + " : " + date1.isEqual(date2));
+           }
+      }
+
+      NOTE: LocalTime class does not provide "isEqual()" method
+
+3.- In Generics syntax, parameterized types are not polymorphic.
+
+    Example:
+
+    package com.udayan.oca;
+
+    import java.util.ArrayList;
+    import java.util.List;
+
+    abstract class Animal {}
+    class Dog extends Animal{}
+
+    public class Test {
+         public static void main(String [] args) {
+             List<Animal> list = new ArrayList<Dog>();
+             list.add(0, new Dog());
+             System.out.println(list.size() > 0);
+         }
+    }
+
+    - List is super type and ArrayList is sub type, hence List l = new ArrayList(); is valid syntax. Animal is super type
+      and Dog is sub type, hence Animal a = new Dog(); is valid syntax. Both depicts Polymorphism.
+
+    - ArrayList<Animal> is not super type of ArrayList<Dog>. Remember this point. So below syntaxes are not allowed:
+
+      ArrayList<Animal> list = new ArrayList<Dog>(); OR
+      List<Animal> list = new ArrayList<Dog>();
+
+ 4.- Given the following code:
+
+     package com.udayan.test;
+
+     public class Exam {
+         public static void main(String [] args) {
+             System.out.println("All the best!");
+         }
+     }
+
+     - To execute Exam class from WORK folder, you should specify the classpath (Quiz\Sec07\classes\) which contains
+       whole path of the class(com\udayan\test\Exam.class).
+
+       And you should also use fully qualified name of the class, which is com.udayan.test.Exam. Hence correct option
+       is: java -cp Quiz\Sec07\classes\ com.udayan.test.Exam.
+
+ 5.- Pay attention to the values you pass to LocalDate and LocalTime classes. if you pass invalid values, an exception
+     will be thrown.
+
+     Example:
+
+     //Test.java
+     package com.udayan.oca;
+
+     import java.time.LocalTime;
+
+     public class Test {
+          public static void main(String [] args) {
+              LocalTime time = LocalTime.of(23, 60);
+              System.out.println(time);
+          }
+     }
+
+     - LocalTime.of(int hour, int minute) creates an instance of LocalTime class. Valid value for hour is: 0 to 23 and
+       valid value for minute is 0 to 59.
+     - java.time.DateTimeException is thrown if invalid values are passed as arguments.
+
+     - NOTE: There are other overloaded of methods available:
+
+     - LocalTime of(int hour, int minute, int second) and
+     - LocalTime of(int hour, int minute, int second, int nanoOfSecond).
+     - Valid value for second is: 0 to 59 and valid value for nano second is: 0 to 999,999,999.
+
+
+ 6.- Be very careful when casting objects from one type to the other. Remember that:
+
+    - They must have a hierarchical relationship such as: IS-A, HAS-A
+    - One object has to be an instance of the other.
+    - Else, ClassCastException is thrown.
+
+    Example:
+
+    //A.java
+    package com.udayan.oca;
+
+    public class A {
+         public void print() {
+             System.out.println("A");
+         }
+    }
+
+    //B.java
+    package com.udayan.oca;
+
+    public class B extends A {
+         public void print() {
+             System.out.println("B");
+         }
+    }
+
+    //C.java
+    package com.udayan.oca;
+
+    public class C extends A {
+         public void print() {
+             System.out.println("C");
+         }
+    }
+
+    //Test.java
+    package com.udayan.oca.test;
+
+    import com.udayan.oca.*;
+
+    public class Test {
+         public static void main(String[] args) {
+             A obj1 = new C();
+             A obj2 = new B();
+             C obj3 = (C)obj1;
+             C obj4 = (C)obj2;
+             obj3.print();
+         }
+    }
+
+   - Class A, B and C are declared public and inside same package com.udayan.oca. Method print() of class A has correctly
+     been overridden by B and C.
+   - print() method is public so no issues in accessing it anywhere.
+
+     Let's check the code inside main method.
+
+     A obj1 = new C(); => obj1 refers to an instance of C class, it is polymorphism.
+     A obj2 = new B(); => obj2 refers to an instance of B class, it is polymorphism.
+     C obj3 = (C)obj1; => obj1 actually refers to an instance of C class, so at runtime obj3 (C type) will refer to an instance of C class. As obj1 is of A type so explicit typecasting is necessary.
+     C obj4 = (C)obj2; => obj2 actually refers to an instance of B class, so at runtime obj4 (C type) will refer to an instance of B class. B and C are siblings and can't refer to each other, so this statement will throw ClassCastException at runtime.
+
+
+ 7.- Pay attention to variable definitions. You are not allowed to use an already defined variable as a variable within a
+     lambda expression.
+
+     Example:
+
+     package com.udayan.oca;
+
+     import java.util.ArrayList;
+     import java.util.List;
+
+     public class Test {
+          public static void main(String[] args) {
+              Integer i = 10;
+              List<Integer> list = new ArrayList<>();
+              list.add(i);
+              list.add(new Integer(i));
+              list.add(i);
+
+              list.removeIf(i -> i == 10);
+
+              System.out.println(list);
+          }
+     }
+
+ 8.- char cannot be compared to Integer, to int.
+
+     Example:
+
+     package com.udayan.oca;
+
+     public class Test {
+          public static void main(String[] args) {
+              /*INSERT*/
+              switch(var) {
+                  case '7':
+                      System.out.println("Lucky no. 7");
+                      break;
+                  default:
+                      System.out.println("DEFAULT");
+              }
+          }
+     }
+
+     - int var = 7; => DEFAULT,
+     - Integer var = 7; => var is of Integer type and case contains char '7'. char '7' cannot be compared with Integer and hence compilation error. case '7' can easily be compared with int value but not with Integer type.
+     - int var = '7'; => Lucky no. 7
+     - HINT: There is no need to remember. case '7' value means you are trying to equate or compare var (Integer value)
+       with '7' (char).
+
+     - If assignment operation works then method invocation, switch expression parameter etc. will also work.
+     - Integer var = 7; is possible but Integer var = '7'; causes compilation error as char cannot be converted to Integer.
+
+ 9.- There is a difference between literal booleans and those defined within variables.
+
+     Example:
+
+     package com.udayan.oca;
+
+     public class Test {
+          public static void main(String[] args) {
+              do {
+                  System.out.println(100);
+              } while (true);
+
+              System.out.println("Bye");
+          }
+     }
+
+     - Boolean expression of do-while loop uses literal true (compile-time constant), hence Java compiler knows that
+       this loop is an infinte loop.
+
+     - It also knows that once at runtime Java Control enters an infinite loop, none of the statements after loop block
+       will get executed.
+
+     - Hence it marks all the codes after infinite loop as Unreachable Code, which results in compilation error.
+     - If boolean variable was used instead of boolean literal, then this program would have compiled and executed successfully.
+
+       public class DoWhileTest1 {
+           public static void main(String[] args) {
+               boolean flag = true;
+               do {
+                   System.out.println(100);
+               } while (flag);
+
+               System.out.println("Bye");
+           }
+       }
+
+10.- Bear in mind that in boolean expressions, Short cuit logical operators can cause one side of the expression to
+     get ignored completely.
+
+     Example:
+
+     package com.udayan.oca;
+
+     public class Test {
+          public static void main(String[] args) {
+              int a = 7;
+              boolean res = a++ == 7 && ++a == 9 || a++ == 9;
+              System.out.println("a = " + a);
+              System.out.println("res = " + res);
+          }
+     }
+
+
+
+
+
