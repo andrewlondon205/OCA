@@ -270,8 +270,7 @@ class Primate {
 }
 
 class Ape extends Primate {
-    public Ape () {
-        System.out.println("Ape");
+    public Ape () { System.out.println("Ape");
     }
 }
 
@@ -368,7 +367,7 @@ class Wolf extends Canine{
         return super.getAverageWeight() + 20;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
 
         System.out.println(new Canine().getAverageWeight());
         System.out.println(new Wolf().getAverageWeight());
@@ -787,4 +786,18 @@ class JellyFish extends MyAnimal {
         System.out.println(myAnimal.length);
     }
 }
+
+interface HumanBeing {
+    int weight = 85;
+}
+
+interface BodyBuilder {
+    int weight = 110;
+}
+
+class Arnold implements HumanBeing, BodyBuilder {
+    
+}
+
+
 

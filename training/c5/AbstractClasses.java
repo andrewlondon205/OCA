@@ -108,7 +108,7 @@ abstract class MyWhale {
 
 class HumpBackWhale extends MyWhale {
 /*    private void sing () {
-        System.out.println("Humpback Whale is singing"); does not compile because method visiblity has been reduced
+        System.out.println("Humpback Whale is singing"); does not compile because method visibility has been reduced
     }*/
 
     protected void sing () {
